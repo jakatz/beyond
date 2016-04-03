@@ -1,7 +1,7 @@
 export class MainController {
-  constructor (MainService) {
+  constructor (youtubeFeed) {
     'ngInject';
 
-    MainService.getItems();
+    this.feed = youtubeFeed;
   }
 }
