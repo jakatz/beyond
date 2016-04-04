@@ -1,0 +1,13 @@
+md-button.md-raised.md-primary(ui-sref="feed")
+  i.fa.fa-arrow-left
+  | Back to Videos
+
+md-card
+  md-card-title
+    md-card-title-text
+      span.md-headline {{detail.flag.snippet.title}}
+      span.md-subhead Published on {{detail.convertDate(detail.flag.snippet.publishedAt)}}
+
+    md-card-content
+      youtube-video(video-id="detail.flag.snippet.resourceId.videoId")
+      p {{detail.flag.snippet.description}}

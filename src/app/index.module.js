@@ -4,7 +4,7 @@ import { runBlock } from './index.run';
 import { MainController } from './main/main.controller';
 import { MainService } from './main/main.service';
 
-angular.module('beyond', ['ui.router', 'ngMaterial'])
+angular.module('beyond', ['ui.router', 'ngMaterial', 'youtube-embed'])
   .config(config)
   .config(routerConfig)
   .run(runBlock)
