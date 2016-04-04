@@ -1,8 +1,14 @@
-md-virtual-repeat-container
-  md-list
-    md-list-item.md-3-line.md-whiteframe-1dp(md-virtual-repeat="flag in main.feed")
-      img(ng-src="{{flag.snippet.thumbnails.default.url}}" ui-sref="detail({id: flag.id})")
+md-list
+  md-list-item.md-3-line.md-whiteframe-1dp(ng-repeat="flag in main.feed")
+    img(ng-src="{{flag.snippet.thumbnails.default.url}}" ui-sref="detail({id: flag.id})")
 
-      .md-list-item-text
-        h3(ui-sref="detail({id: flag.id})") {{flag.snippet.title}}
-        p {{flag.snippet.description}}
+    .md-list-item-text
+      h3(ui-sref="detail({id: flag.id})") {{flag.snippet.title}}
+      p {{flag.snippet.description}}
+
+paging(
+  ng-init="currentPage=1"
+  page-size="5"
+  page="currentPage"
+  total="2"
+)
