@@ -1,55 +1,12 @@
-// $mobile-width: 480px;
-// $tablet-width: 768px;
-
-// @mixin mobile {
-//   @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
-//     @content;
-//   }
-// }
-
-// @mixin tablet {
-//   @media (min-width: #{$tablet-width}) {
-//     @content;
-//   }
-// }
-
-/* mixin for multiline */
-@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
-  overflow: hidden;
-  position: relative;
-  line-height: $lineHeight;
-  max-height: $lineHeight * $lineCount;
-  text-align: justify;
-  margin-right: -1em;
-  padding-right: 1em;
-  &:before {
-    content: '...';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.2em;
-    background: $bgColor;
-  }
-}
-
 body {
   background: none;
   background-image: url('/assets/images/phonograph-background.png');
   background-repeat: repeat;
 }
 
-.block-with-text {
-  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 4, $bgColor: white);
-}
-
+// video
 .video {
+  // video__thumb
   &__thumb {
     img {
       cursor: pointer;
@@ -58,16 +15,15 @@ body {
     }
   }
 
+  // video__details
   &__details {
-    overflow: hidden;
-  }
 
-  &__details__title {
-    cursor: pointer;
-  }
-
-  &__details__description {
-    text-overflow: ellipsis;
-    overflow: hidden;
+    // video__details__title
+    &__title {
+      cursor: pointer;
+      &:hover {
+        color: rgb(199, 9, 90);
+      }
+    }
   }
 }
