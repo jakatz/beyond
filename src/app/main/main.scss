@@ -1,2 +1,44 @@
-body {
+// $mobile-width: 480px;
+// $tablet-width: 768px;
+
+// @mixin mobile {
+//   @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+//     @content;
+//   }
+// }
+
+// @mixin tablet {
+//   @media (min-width: #{$tablet-width}) {
+//     @content;
+//   }
+// }
+
+// .truncate-ellipsis {
+//     display: table;
+//     table-layout: fixed;
+//     width: 100%;
+//     white-space: nowrap;
+// }
+
+// .truncate-ellipsis > * {
+//     display: table-cell;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+// }
+
+.video {
+  &__thumb {
+    img {
+      cursor: pointer;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__details {
+  }
+
+  &__details__title {
+    cursor: pointer;
+  }
 }

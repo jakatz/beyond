@@ -1,14 +1,9 @@
-md-list
-  md-list-item.md-3-line.md-whiteframe-1dp(ng-repeat="flag in main.feed")
-    img(ng-src="{{flag.snippet.thumbnails.default.url}}" ui-sref="detail({id: flag.id})")
-
-    .md-list-item-text
-      h3(ui-sref="detail({id: flag.id})") {{flag.snippet.title}}
-      p(hide-xs) {{flag.snippet.description}}
-
-paging(
-  ng-init="currentPage=1"
-  page-size="5"
-  page="currentPage"
-  total="2"
-)
+md-card.video(layout-gt-xs="row" layout-xs="column" ng-repeat="flag in main.feed")
+  div.video__thumb(flex-gt-xs="60" flex-order-xs="1")
+    img(ng-src="{{flag.snippet.thumbnails.high.url}}" ui-sref="detail({id: flag.id})")
+  div.video__details(flex-gt-xs="40" layout-padding)
+    md-card-title
+      md-card-title-text
+        span.md-headline.video__details__title(ui-sref="detail({id: flag.id})") {{flag.snippet.title}}
+        span.md-subhead.video__details__subtitle Published on {{main.convertDate(flag.snippet.publishedAt)}}
+    p.video__details__description(hide-xs) {{flag.snippet.description}}
