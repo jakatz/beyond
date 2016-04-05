@@ -39,6 +39,12 @@
   }
 }
 
+body {
+  background: none;
+  background-image: url('/assets/images/phonograph-background.png');
+  background-repeat: repeat;
+}
+
 .block-with-text {
   @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 4, $bgColor: white);
 }

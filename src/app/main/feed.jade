@@ -4,5 +4,5 @@ md-card.video(layout-gt-xs="row" layout-xs="column" ng-repeat="flag in main.feed
   div.video__details(layout="column" flex-gt-xs="40" layout-padding layout-align="space-around")
     div.md-headline.video__details__title(ui-sref="detail({id: flag.id})") {{flag.snippet.title}}
     div.md-subhead.video__details__subtitle Published on {{main.convertDate(flag.snippet.publishedAt)}}
-    p.video__details__description(hide-xs) {{flag.snippet.description | limitTo: 100}}
+    p.video__details__description(hide-sm hide-xs) {{flag.snippet.description | limitTo: 100}}
       span(ng-if="flag.snippet.description.length>100") ...
