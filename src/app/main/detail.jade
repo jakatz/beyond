@@ -4,7 +4,7 @@ md-button.md-raised.md-primary(ui-sref="feed")
 
 md-card.detail(layout="column" layout-padding)
   span.md-headline {{detail.flag.snippet.title}}
-  span.md-subhead Published on {{detail.convertDate(detail.flag.snippet.publishedAt)}}
+  span.md-subhead.video__details__subtitle Published on {{detail.convertDate(detail.flag.snippet.publishedAt)}}
 
   md-content.detail__content(layout="column" layout-gt-sm="row")
     div(flex-gt-sm="60")
