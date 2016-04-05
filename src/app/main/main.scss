@@ -13,18 +13,35 @@
 //   }
 // }
 
-// .truncate-ellipsis {
-//     display: table;
-//     table-layout: fixed;
-//     width: 100%;
-//     white-space: nowrap;
-// }
+/* mixin for multiline */
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
 
-// .truncate-ellipsis > * {
-//     display: table-cell;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-// }
+.block-with-text {
+  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 4, $bgColor: white);
+}
 
 .video {
   &__thumb {
@@ -36,9 +53,15 @@
   }
 
   &__details {
+    overflow: hidden;
   }
 
   &__details__title {
     cursor: pointer;
+  }
+
+  &__details__description {
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }

@@ -1,9 +1,9 @@
 md-card.video(layout-gt-xs="row" layout-xs="column" ng-repeat="flag in main.feed")
-  div.video__thumb(flex-gt-xs="60" flex-order-xs="1")
+  div.video__thumb(flex-gt-xs="60" flex-order-xs="1" layout-padding)
     img(ng-src="{{flag.snippet.thumbnails.high.url}}" ui-sref="detail({id: flag.id})")
   div.video__details(flex-gt-xs="40" layout-padding)
     md-card-title
       md-card-title-text
         span.md-headline.video__details__title(ui-sref="detail({id: flag.id})") {{flag.snippet.title}}
         span.md-subhead.video__details__subtitle Published on {{main.convertDate(flag.snippet.publishedAt)}}
-    p.video__details__description(hide-xs) {{flag.snippet.description}}
+    p.video__details__description.block-with-text(hide-xs) {{flag.snippet.description}}
