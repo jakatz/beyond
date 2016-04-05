@@ -6,11 +6,11 @@ md-card.detail(layout="column" layout-padding)
   span.md-headline {{detail.flag.snippet.title}}
   span.md-subhead Published on {{detail.convertDate(detail.flag.snippet.publishedAt)}}
 
-  md-content.detail__content(layout layout-sm="column" layout-xs="column" flex)
-    div(flex-xs="100" flex-sm="100" flex-gt-sm="65")
+  md-content.detail__content(layout="column" layout-gt-sm="row")
+    div(flex-gt-sm="60")
       div.videowrapper
         youtube-video(video-id="detail.flag.snippet.resourceId.videoId")
-    p.detail__content__description(flex hide-xs hide-sm) {{detail.flag.snippet.description | limitTo: 250}}
+    p.detail__content__description(flex-gt-sm="40" hide-xs hide-sm) {{detail.flag.snippet.description | limitTo: 250}}
       span(ng-if="detail.flag.snippet.description.length>250") ...
-    p.detail__content__description(flex hide-gt-sm) {{detail.flag.snippet.description | limitTo: 350}}
+    p.detail__content__description(flex-gt-sm="40" hide-gt-sm) {{detail.flag.snippet.description | limitTo: 350}}
       span(ng-if="detail.flag.snippet.description.length>350") ...

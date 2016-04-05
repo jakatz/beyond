@@ -3,6 +3,12 @@ body {
   background-repeat: repeat;
 }
 
+.feed-container {
+  height: 94vh;
+  padding: 0;
+  margin: 0;
+  -webkit-mask-image: -webkit-gradient(linear, left 90%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
 .feed {
   background: none;
 }
