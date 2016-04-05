@@ -1,7 +1,29 @@
+/*=============================================
+=          Foundation Flex-Video Mixin        =
+=============================================*/
+@mixin responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+
+  iframe, object, embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+/*===========================================*/
+
+
 body {
-  background: none;
   background-image: url('/assets/images/phonograph-background.png');
   background-repeat: repeat;
+}
+
+.feed {
+  background: none;
 }
 
 // video
@@ -26,4 +48,21 @@ body {
       }
     }
   }
+}
+
+.videowrapper {
+    float: none;
+    clear: both;
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+.videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

@@ -1,7 +1,9 @@
-export function config ($logProvider) {
+export function config ($logProvider, $mdThemingProvider) {
   'ngInject';
   // Enable log
   $logProvider.debugEnabled(true);
 
   // Set options third-party lib
+  $mdThemingProvider.theme('default')
+    .primaryPalette('indigo');
 }
